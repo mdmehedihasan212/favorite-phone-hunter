@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Mela</title>
+    <title>Mobile Shop</title>
     <!--------------- 
         Link CSS 
     ---------------->
@@ -32,7 +32,7 @@
         Header Start 
     ------------------->
     <header>
-        <h1 class="text-center fw-bold text-info mt-3"> <i class="fa-solid fa-phone"></i> Mobile Mela</h1>
+        <h1 class="text-center fw-bold text-info mt-3"> <i class="fa-solid fa-phone"></i> Mobile Shop</h1>
     </header>
     <!------------------ 
         Header End 
@@ -41,12 +41,24 @@
          Main Section Start 
     ------------------------->
     <main>
-        <div class="input-group mb-3 w-50 mx-auto">
-            <input type="input-text" class="form-control" placeholder="Search Your Mobile"
-                aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary btn btn-primary text-white" type="button"
-                id="search-phone">Search</button>
-        </div>
+        <section>
+            <div class="main">
+                <div class="input-group mb-3 w-50 mx-auto">
+                    <input id="input-text" type="text" class="form-control" placeholder="Search Your Mobile"
+                        aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary btn btn-primary text-white" type="button"
+                        onclick="searchPhone()">Search</button>
+                </div>
+            </div>
+        </section>
+        <section>
+            <p id="error" class="text-center text-danger fst-italic">
+
+            </p>
+            <div id="load-data">
+
+            </div>
+        </section>
     </main>
     <!------------------------
          Main Section End 
@@ -56,6 +68,8 @@
     -------------------->
     <footer>
 
+
+
     </footer>
     <!-------------------
          Footer End 
@@ -63,7 +77,7 @@
     <!--------------------- 
         Link JavaScript 
     ---------------------->
-    <script src="./js/script.js"></script>
+    <script src="javascript.js"></script>
 </body>
 
 </html>

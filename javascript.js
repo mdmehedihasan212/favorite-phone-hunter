@@ -1,12 +1,23 @@
-document.getElementById("search-phone").addEventListener("click", function () {
-    const url = 'https://openapi.programming-hero.com/api/phones?search';
-    fetch(url)
-        .then(response => response.json())
-        .then(data => firstData(data))
-});
+const searchPhone = () => {
+    const inputField = document.getElementById("input-text");
+    const error = document.getElementById("error");
+    const inputValue = inputField.value;
+    inputField.value = "";
+    // Error Massage
+    if (!isNaN(inputValue)) {
+        error.innerText = "Please Type Only Mobile Name";
+    }
+    else {
+        const url = 'https://openapi.programming-hero.com/api/phones?search';
+        fetch(url)
+            .then(response => response.json())
+            .then(data => firstData(data))
+        error.innerText = "";
+    }
+
+};
 
 const firstData = value => {
-    // console.log(result);
     const values = value.data;
     const searchResult = document.getElementById("load-data");
     for (const value of values) {
@@ -25,8 +36,6 @@ const firstData = value => {
         </div>
         `;
         searchResult.appendChild(div);
+    };
 
-    }
-
-
-}
+};
