@@ -8,7 +8,7 @@ const searchPhone = () => {
         error.innerText = "Please Type Only Mobile Name";
     }
     else {
-        const url = 'https://openapi.programming-hero.com/api/phones?search';
+        const url = `https://openapi.programming-hero.com/api/phones?search=${inputValue}`;
         fetch(url)
             .then(response => response.json())
             .then(data => firstData(data))
@@ -18,24 +18,23 @@ const searchPhone = () => {
 };
 
 const firstData = value => {
+    // console.log(result);
     const values = value.data;
     const searchResult = document.getElementById("load-data");
     for (const value of values) {
         const div = document.createElement("div");
         div.innerHTML = `
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-                <div class="card h-50">
-                    <img src="${value.image}" height="250" width="250" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Mobile Name: ${value.phone_name}</h5>
-                        <p class="card-text">Mobile Brand: ${value.brand}</p>
-                    </div>
-                </div>
-            </div>
+        <div class="container w-50 shadow-lg p-3 mb-5 bg-body rounded">
+        <img src="${value.image}" class="card-img-top" alt="...">
+        <h5 class="card-title m-2">Name: ${value.phone_name}</h5>
+        <p class="card-text m-2">Brand: ${value.brand}</p>
+        <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary" type="button">Button</button>
         </div>
+        </div>    
         `;
         searchResult.appendChild(div);
-    };
+
+    }
 
 };
