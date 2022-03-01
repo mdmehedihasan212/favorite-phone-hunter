@@ -27,12 +27,12 @@
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-danger p-2 text-dark bg-opacity-50">
     <!------------------ 
         Header Start 
     ------------------->
     <header>
-        <h1 class="text-center fw-bold text-info mt-3"> <i class="fa-solid fa-phone"></i> Mobile Shop</h1>
+        <h1 class="text-center fw-bold text-white m-3"> <i class="fa-solid fa-phone"></i> Mobile Shop</h1>
     </header>
     <!------------------ 
         Header End 
@@ -42,21 +42,20 @@
     ------------------------->
     <main>
         <section>
-            <div class="main">
-                <div class="input-group mb-3 w-50 mx-auto">
-                    <input id="input-text" type="text" class="form-control"
-                        placeholder="Search Your Favourite Mobile Name" aria-label="Recipient's username"
-                        aria-describedby="button-addon2">
-                    <button class="btn btn-outline-secondary btn btn-primary text-white" type="button"
-                        onclick="searchPhone()">Search</button>
-                </div>
+            <div class="input-group mb-3 w-50 mx-auto">
+                <input id="input-text" type="text" class="form-control" placeholder="Search Your Favourite Mobile Name"
+                    aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button class="btn btn-outline-secondary btn btn-primary text-white" type="button"
+                    onclick="searchPhone()">Search</button>
             </div>
         </section>
         <section>
-            <p id="error" class="text-center text-danger">
+            <!-- Error Code -->
+            <h5 id="error" class="text-center text-white">
 
-            </p>
-            <div id="load-data" class="row row-cols-1 row-cols-md-3 g-4 m-5">
+            </h5>
+            <!-- Load Data -->
+            <div id="display-result" class="row">
 
             </div>
         </section>
