@@ -50,23 +50,19 @@ const mobileDetails = details => {
         .then(data => showDetails(data.data))
 };
 
-const showDetails = details => {
-    console.log(details);
+const showDetails = view => {
+    const show1 = view.mainFeatures;
+    const show2 = view.others;
+
     document.getElementById("display-details").innerHTML = `
-    <div class="card mb-3" style="max-width: 540px;">
-    <div class="row">
-      <div class="col-md-4">
-        <img src="${details.image}" class="img-fluid rounded-start" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Memory: ${details.memory}</h5>
-          <p class="card-text">Storage: ${details.storage} </p>
-          <p class="card-text">Release Date: ${details.releaseDate}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-    `;
-}
+    <div class="card mx-auto shadow p-3 mb-5 bg-body rounded-3" style="width: 15rem;">
+        <p class="card-title">Display Size: ${show1.displaySize}</p>
+        <p class="card-text">Storage: ${show1.storage}<p>
+        <p class="card-title">Memory: ${show1.memory}</p>
+        <p class="card-text">Chipset: ${show1.chipset}<p>
+        <p class="card-title">Bluetooth: ${show2.Bluetooth}</p>
+        <p class="card-text">GPS: ${show2.GPS}<p>
+        </div> 
+        `;
+};
 
