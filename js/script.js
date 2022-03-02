@@ -33,8 +33,10 @@ const result = values => {
         <div class="card mx-auto mt-5 p-3 shadow p-3 mb-5 bg-body rounded-3" style="width: 15rem;">
         <img src="${value.image}" height="200" class="card-img-top" alt="...">
         <div class="card-body">
-        <h5 class="card-title">Name: ${value.phone_name}</h5>
-        <h5 class="card-text">Brand: ${value.brand}</h5>
+        <h5 class="card-title">Name</h5>
+        <h6 class="text-primary">${value.phone_name}</h6>
+        <h5 class="card-text">Brand</h5>
+        <h6 class="text-primary">${value.brand}</h6>
         <button onclick="mobileDetails('${value.slug}')" class="btn btn-primary mt-2">Mobile Details</button>
         </div>
         </div>    
@@ -53,16 +55,21 @@ const mobileDetails = details => {
 const showDetails = view => {
     const show1 = view.mainFeatures;
     const show2 = view.others;
-
     document.getElementById("display-details").innerHTML = `
-    <div class="card mx-auto shadow p-3 mb-5 bg-body rounded-3" style="width: 15rem;">
-        <p class="card-title">Display Size: ${show1.displaySize}</p>
-        <p class="card-text">Storage: ${show1.storage}<p>
-        <p class="card-title">Memory: ${show1.memory}</p>
-        <p class="card-text">Chipset: ${show1.chipset}<p>
-        <p class="card-title">Bluetooth: ${show2.Bluetooth}</p>
-        <p class="card-text">GPS: ${show2.GPS}<p>
-        </div> 
+    <div class="card mx-auto shadow p-3 mb-5 bg-body rounded-3 mt-5" style="width: 25rem;">
+    <h5 class="text-center text-white bg-dark">Name: ${view.name}</h5>
+    <img src="${view.image}" class="mx-auto mt-3" height="100" width="120" alt="...">
+    <h6 class="text-primary text-decoration-underline">Display Size</h6>
+        <p class="info"> ${show1.displaySize}</p>
+        <h6 class="text-primary text-decoration-underline">Storage</h6>
+        <p class="info"> ${show1.storage}</p>
+        <h6 class="text-primary text-decoration-underline">Memory</h6>
+        <p class="info"> ${show1.memory}</p>
+        <h6 class="text-primary text-decoration-underline">Chipset</h6>
+        <p class="info"> ${show1.chipSet}</p>
+        <h6 class="text-primary text-decoration-underline">Bluetooth</h6>
+        <p class="info"> ${show2.Bluetooth}</p>
+    </div>
         `;
 };
 
