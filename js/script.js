@@ -9,7 +9,7 @@ const searchPhone = () => {
         error.innerText = "Type Phone Brand Name";
         displayResult.innerHTML = "";
     }
-    // else if (inputValue) {
+    // else if (inputValue == displayResult.brand)) {
     //     error.innerText = "Please Type Again";
     //     displayResult.innerHTML = "";
     // }
@@ -30,7 +30,7 @@ const result = values => {
         div.classList.add("col-lg-4")
         div.classList.add("mb-5")
         div.innerHTML = `
-        <div class="card mx-auto mt-5 p-3 shadow p-3 mb-5 bg-body rounded-3" style="width: 15rem;">
+        <div class="card mx-auto mt-5 p-3 shadow p-3 mb-5 bg-body rounded-3" style="width: 17rem;">
         <img src="${value.image}" height="200" class="card-img-top" alt="...">
         <div class="card-body">
         <h5 class="card-title">Name</h5>
@@ -42,7 +42,9 @@ const result = values => {
         </div>    
         `;
         displayResult.appendChild(div);
+
     }
+
 };
 
 const mobileDetails = details => {
@@ -50,6 +52,8 @@ const mobileDetails = details => {
     fetch(url)
         .then(res => res.json())
         .then(data => showDetails(data.data))
+    error.innerText = "";
+
 };
 
 const showDetails = view => {
@@ -57,7 +61,7 @@ const showDetails = view => {
     const show2 = view.others;
     document.getElementById("display-details").innerHTML = `
     <div class="card mx-auto shadow p-3 mb-5 bg-body rounded-3 mt-5" style="width: 25rem;">
-    <h5 class="text-center text-white bg-dark">Name: ${view.name}</h5>
+    <h5 class="text-center text-white bg-primary">Name: ${view.name}</h5>
     <img src="${view.image}" class="mx-auto mt-3" height="100" width="120" alt="...">
     <h6 class="text-primary text-decoration-underline">Display Size</h6>
         <p class="info"> ${show1.displaySize}</p>
@@ -71,5 +75,6 @@ const showDetails = view => {
         <p class="info"> ${show2.Bluetooth}</p>
     </div>
         `;
+
 };
 
